@@ -16,3 +16,4 @@ the "Deliver" stage of your Pipeline.
 
 add string
 add new string
+add second string
