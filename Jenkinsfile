@@ -8,7 +8,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn versions:set -DnewVersion=1.0.3-SNAPSHOT -B -DskipTests clean package'
+                echo "${BUILD_NUMBER}"
+                echo "${GIT_COMMIT}"
+                sh 'mvn versions:set -DVersion=1.0.3-SNAPSHOT -B -DskipTests clean package'
             }
         }
         stage('Test') {
