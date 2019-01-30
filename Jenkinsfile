@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo "${BUILD_NUMBER}"
                 echo "${GIT_COMMIT}"
-                sh "mvn versions:set -DnewVersion=1.0.1-SNAPSHOT.${BUILD_NUMBER} -B -DskipTests clean package"
+                sh "mvn -B -DskipTests clean package"
             }
         }
         stage('Test') {
