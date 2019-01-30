@@ -23,9 +23,9 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
+        stage('Building image') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                docker.build("my-image:${env.BUILD_ID}")
             }
         }
     }
